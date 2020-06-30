@@ -1,0 +1,35 @@
+.chat__form {
+  background-color: #e0e0e0;
+  width:50%
+  }
+ form {
+    max-width: 800px;
+    margin: 0 auto;
+    height: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  input {
+    height: 40px;
+    font-size: 16px;
+    min-width: 90%;
+    padding-left: 15px;
+    background-color: #fff;
+    border-radius: 15px;
+    border: none;
+  }
+  button {
+    width: 10%;
+    height: 100%;
+    font-size: 16px;
+    background-color: red;
+    border: solid black ;
+    margin-left:2px;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
