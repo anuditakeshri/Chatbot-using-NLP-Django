@@ -1,0 +1,71 @@
+<html>
+<title>Register</title>
+<body bgcolor="yellow">
+<h1><center>Registration Page</center></h1>
+<form action="register" method="post">
+{% csrf_token %}
+<div>
+<label style='display:block'><strong>FIRST NAME :</strong></label>
+<input style='width: 50%;
+    display:block;
+  padding: 12px 20px;
+  margin:2px 0;
+  border-color: black;
+  box-sizing: border-box' type="text" name="fname" placeholder="Enter first Name">
+<br><br>
+<label style='display:block'><strong>LAST NAME :</strong></label>
+<input style='width: 50%;
+    display:block;
+  padding: 12px 20px;
+  margin: 2px 0;
+  border-color: black;
+  box-sizing: border-box'    type="text" name="lname" placeholder="Enter last Name">
+<br><br>
+<label style='display:block'><strong>EMAIL :</strong></label>
+<input style='width: 50%;
+    display:block;
+  padding: 12px 20px;
+  margin: 2px 0;
+  border-color: black;
+  box-sizing: border-box' type="email" name="email" placeholder="Enter your email">
+<br><br>
+<label style='display:block'><strong>USERNAME :</strong></label>
+<input style='width: 50%;
+    display:block;
+  padding: 12px 20px;
+  margin: 5px 0;
+  border-color: black;
+  box-sizing: border-box' type="text" name="username" placeholder="Enter Username">
+<br><br>
+<label style='display:block'><strong>PASSWORD :</strong></label>
+<input style='width: 50%;
+    display:block;
+  padding: 12px 20px;
+  margin: 2px 0;
+  border-color: black;
+  box-sizing: border-box' type="password" name="password1" placeholder="Enter Password">
+<br><br>
+<label style='display:block'><strong>CONFIRM PASSWORD :</strong></label>
+<input style='width: 50%;
+    display:block;
+  padding: 12px 20px;
+  margin: 2px 0;
+  border-color: black;
+  box-sizing: border-box' type="password" name="password2" placeholder="Enter Password">
+<br><br>
+</div>
+<button style='width: 20%;
+  padding: 12px 20px;
+  background-color: pink;
+  border-color: black;
+  margin: 2px 0;
+  box-sizing: border-box'   type="submit">Submit Here</button>
+</form>
+
+<div>
+{% for message in messages %}
+<h3>{{message}}</h3>
+{% endfor %}
+</div>
+</body>
+</html>

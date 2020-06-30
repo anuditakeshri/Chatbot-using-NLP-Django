@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="{% static './chat_styling.css' %}" />
+<head>
+<title>Chat Window</title>
+</head>
+
+<body style='margin:0px;height:100%;'>
+    <nav id="nav-bar_chat">
+      <header id="heading_chat">Chatbot Project</header>
+      <h3 style='display:inline;'>Hello, {{user.first_name}}</h3>
+      <a href="accounts/logout" class="logout" >Logout</a>
+    </nav>
+    
+    {% for item in all_message_items %}
+    <div style='margin:8px;'>
+    {% if item.isbot %}
+        <div style='background-image: linear-gradient(to right, lightblue, white);padding: 10px 12px;background-color: pink;'>{{item.content}}</div>
+    {% else %}
+        <div style='background-image: linear-gradient(to right, white , pink); padding: 10px 12px;text-align:right;background-color:lightblue;'>{{item.content}}</div>
+    {% endif %}
+    
+    </div>
+    {% endfor %}
+    
+    <div class= "chat__form">
+    <form id="chat__form" action= "addmsg" method="post" style='margin-left:8px;padding: 10px 12px;'>
+    {% csrf_token %}    
+    <input placeholder= "Type your message" type="text" name="content"/>
+    <button type="submit">Send</button>
+    </form>
+    </div>   
+ 
+    
+    
+    
+</body>
+</html>
